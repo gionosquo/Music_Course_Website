@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>STIKOM Music Studio | Kelas</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="icon" href="media/Logo%20Kursus.png">
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="media/Logo%20Kursus.png" alt="Logo Kursus" class="brand-logo">
+        <span>STIKOM Music Studio</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" data-nav href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="kelas.html">Kelas</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="instruktur.html">Instruktur</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="jadwal.html">Jadwal</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav href="daftar.html">Daftar</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-4 my-lg-5">
+    <div class="d-flex justify-content-between align-items-start gap-2 flex-wrap mb-3">
+      <div>
+        <h1 class="h3 mb-1">Daftar Kelas</h1>
+        <div class="small-muted">Cari kelas sesuai instrumen, level, dan harga.</div>
+      </div>
+      <a class="btn btn-primary" href="daftar.html"><i class="bi bi-pencil-square me-2"></i>Daftar</a>
+    </div>
+
+    <section class="filter-bar mb-4">
+      <div class="row g-3 align-items-end">
+        <div class="col-12 col-md-4">
+          <label class="form-label" for="searchClass">Search</label>
+          <input id="searchClass" type="text" class="form-control" placeholder="Contoh: gitar / piano..." />
+        </div>
+        <div class="col-12 col-md-3">
+          <label class="form-label" for="filterInstrument">Instrumen</label>
+          <select id="filterInstrument" class="form-select">
+            <option value="">Semua</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-3">
+          <label class="form-label" for="filterLevel">Level</label>
+          <select id="filterLevel" class="form-select">
+            <option value="">Semua</option>
+            <option value="Pemula">Pemula</option>
+            <option value="Menengah">Menengah</option>
+            <option value="Mahir">Mahir</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-2">
+          <label class="form-label" for="filterPrice">Harga</label>
+          <select id="filterPrice" class="form-select">
+            <option value="">Semua</option>
+            <option value="lt500">&lt; 500K</option>
+            <option value="500to600">500K – 600K</option>
+            <option value="gt600">&gt; 600K</option>
+          </select>
+        </div>
+
+        <div class="col-12 d-flex justify-content-end">
+          <button id="btnResetFilter" class="btn btn-outline-secondary btn-sm" type="button">Reset Filter</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="row g-4" id="classList">
+      <!-- dirender oleh JS -->
+    </section>
+  </main>
+
+  <div class="modal fade" id="classDetailModal" tabindex="-1" aria-hidden="true" aria-labelledby="modalClassTitle">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="modalClassTitle">Detail Kelas</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body" id="modalClassBody"></div>
+        <div class="modal-footer">
+          <a id="modalClassCTA" class="btn btn-primary" href="daftar.html">Daftar Kelas Ini</a>
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+      <div>
+        <div class="fw-semibold">STIKOM Music Studio</div>
+        <div class="small-muted">Denpasar • 14:00–20:00</div>
+      </div>
+      <div class="small-muted">Kontak: 08xx-xxxx-xxxx • email@contoh.com</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
