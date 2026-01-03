@@ -1,0 +1,252 @@
+:root{
+  --brand: #0d6efd;
+  --brand-2: #0b5ed7;
+  --bg-1: #061a3a;       /* navy */
+  --bg-2: #0b2f68;       /* deep blue */
+  --surface: rgba(255,255,255,.10);
+  --surface-2: rgba(255,255,255,.14);
+  --border: rgba(255,255,255,.18);
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.70);
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text);
+  /* Background biru gradient */
+  background:
+    radial-gradient(900px 450px at 10% 10%, rgba(13,110,253,.42), transparent 60%),
+    radial-gradient(700px 420px at 90% 15%, rgba(0,255,255,.18), transparent 60%),
+    radial-gradient(700px 520px at 50% 90%, rgba(13,110,253,.26), transparent 65%),
+    linear-gradient(135deg, var(--bg-1), var(--bg-2));
+}
+
+/* biar container terlihat “ngambang” */
+main.container{
+  padding-bottom: 1rem;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar{
+  background: rgba(255,255,255,.10) !important;
+  border-bottom: 1px solid rgba(255,255,255,.16) !important;
+  backdrop-filter: blur(10px);
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand{
+  color: rgba(255,255,255,.92) !important;
+}
+
+.navbar .nav-link:hover{
+  color: #ffffff !important;
+}
+
+.navbar .nav-link.active{
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+.navbar-brand span{
+  font-weight: 800;
+  letter-spacing: .3px;
+}
+
+.brand-logo{
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: rgba(255,255,255,.12);
+  padding: 4px;
+  border: 1px solid rgba(255,255,255,.16);
+}
+
+/* =========================
+   TEXT helper
+========================= */
+.small-muted{
+  color: var(--muted);
+}
+
+/* =========================
+   HERO
+========================= */
+.hero{
+  border-radius: 1rem;
+  padding: 1.25rem;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.16), rgba(255,255,255,.08));
+  border: 1px solid rgba(255,255,255,.16);
+  backdrop-filter: blur(10px);
+}
+
+.hero .badge{
+  letter-spacing: .3px;
+}
+
+/* =========================
+   FILTER BAR
+========================= */
+.filter-bar{
+  border-radius: 1rem;
+  padding: 1rem;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.16);
+  backdrop-filter: blur(10px);
+}
+
+/* =========================
+   CARDS
+========================= */
+.card{
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.16);
+  color: var(--text);
+  backdrop-filter: blur(10px);
+}
+
+.card .card-title,
+.card h5,
+.card h6{
+  color: rgba(255,255,255,.95);
+}
+
+.card .card-text{
+  color: rgba(255,255,255,.78);
+}
+
+.card-hover{
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.card-hover:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0,0,0,.30);
+}
+
+/* badge lembut */
+.badge-soft{
+  background: rgba(13,110,253,.22);
+  color: #dbe9ff;
+  border: 1px solid rgba(13,110,253,.35);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-primary{
+  background: linear-gradient(135deg, #2f7bff, #0d6efd);
+  border: 0;
+}
+
+.btn-primary:hover{
+  filter: brightness(1.05);
+}
+
+.btn-outline-primary{
+  color: #e6f0ff;
+  border-color: rgba(230,240,255,.55);
+}
+
+.btn-outline-primary:hover{
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.70);
+  color: #ffffff;
+}
+
+.btn-outline-secondary{
+  color: rgba(255,255,255,.85);
+  border-color: rgba(255,255,255,.32);
+}
+.btn-outline-secondary:hover{
+  background: rgba(255,255,255,.12);
+  color: #ffffff;
+  border-color: rgba(255,255,255,.55);
+}
+
+/* box info cepat di hero (yang class: border rounded-3 p-3 bg-white) */
+.hero .border.rounded-3.bg-white{
+  background: rgba(255,255,255,.10) !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  color: var(--text);
+  backdrop-filter: blur(10px);
+}
+
+/* biar teks di hero lebih kebaca */
+.hero .lead{
+  color: rgba(255,255,255,.82);
+}
+
+/* table jadwal biar cocok di dark */
+.table{
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--text);
+  --bs-table-border-color: rgba(255,255,255,.14);
+  --bs-table-striped-bg: rgba(255,255,255,.06);
+  --bs-table-hover-bg: rgba(255,255,255,.08);
+}
+
+.table thead th{
+  color: rgba(255,255,255,.92);
+  border-bottom-color: rgba(255,255,255,.18) !important;
+}
+
+.table tbody td{
+  border-bottom-color: rgba(255,255,255,.12) !important;
+}
+
+/* accordion FAQ biar nyatu */
+.accordion{
+  --bs-accordion-bg: rgba(255,255,255,.10);
+  --bs-accordion-border-color: rgba(255,255,255,.16);
+  --bs-accordion-btn-bg: rgba(255,255,255,.10);
+  --bs-accordion-btn-color: rgba(255,255,255,.92);
+  --bs-accordion-active-bg: rgba(13,110,253,.22);
+  --bs-accordion-active-color: #fff;
+  --bs-accordion-body-color: rgba(255,255,255,.82);
+}
+
+.accordion-item{
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.16);
+  overflow: hidden;
+}
+
+.accordion-button{
+  backdrop-filter: blur(10px);
+}
+
+.accordion-button:focus{
+  box-shadow: 0 0 0 .2rem rgba(13,110,253,.25);
+}
+
+/* icon panah accordion biar keliatan di background gelap */
+.accordion-button::after{
+  filter: invert(1);
+}
+
+/* card bootstrap yang kamu pakai border-0 shadow-sm tetap keliatan glass */
+.card.border-0.shadow-sm{
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.16);
+  color: var(--text);
+  backdrop-filter: blur(10px);
+}
+
+/* link btn outline di background gelap */
+.btn-outline-primary.btn-sm{
+  border-color: rgba(230,240,255,.55);
+  color: rgba(255,255,255,.90);
+}
+.btn-outline-primary.btn-sm:hover{
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.70);
+  color: #fff;
+}
+
