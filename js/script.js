@@ -289,7 +289,6 @@ function initJadwalPage(){
 }
 
 /* DAFTAR PAGE */
-
 function initDaftarPage(){
   const form = document.getElementById("regForm");
   if(!form) return;
@@ -299,12 +298,17 @@ function initDaftarPage(){
   const phoneEl = document.getElementById("phone");
   const emailEl = document.getElementById("email");
 
+  // isi dropdown kelas
   if(classSelect){
     classesData.forEach(c => {
-      classSelect.insertAdjacentHTML("beforeend", `<option value="${c.id}">${c.name} — ${formatRupiah(c.price)}</option>`);
+      classSelect.insertAdjacentHTML(
+        "beforeend",
+        `<option value="${c.id}">${c.name} — ${formatRupiah(c.price)}</option>`
+      );
     });
   }
 
+  // auto pilih kelas dari url 
   const params = new URLSearchParams(window.location.search);
   const kelasId = params.get("kelas");
   if(kelasId && classSelect) classSelect.value = kelasId;
@@ -346,19 +350,95 @@ function initDaftarPage(){
         form.classList.remove("was-validated");
       });
     } else {
-      alert("Pendaftaran berhasil! (SweetAlert2 belum terpasang)");
+      alert("Pendaftaran berhasil!");
       form.reset();
       form.classList.remove("was-validated");
     }
   });
 }
 
-/* INIT */
+/* AUDIO */
+function initAudioPlayer(){
+  const select = document.getElementById("audioSelect");
+  const playBtn = document.getElementById("audioPlayBtn");
+  const stopBtn = document.getElementById("audioStopBtn");
+  const seek = document.getElementById("audioSeek");
+  const vol = document.getElementById("audioVolume");
+  const timeEl = document.getElementById("audioTime");
+  const labelEl = document.getElementById("audioLabel");
+  const audio = document.getElementById("audioPlayer");
 
+  if(!select || !playBtn || !stopBtn || !seek || !vol || !timeEl || !labelEl || !audio) return;
+
+  function formatTime(sec){
+    if(!isFinite(sec)) return "0:00";
+    const m = Math.floor(sec / 60);
+    const s = Math.floor(sec % 60).toString().padStart(2, "0");
+    return `${m}:${s}`;
+  }
+
+  function setLabel(){
+    labelEl.textContent = select.options[select.selectedIndex]?.textContent || "-";
+  }
+
+  function loadSelected(){
+    audio.src = select.value;
+    audio.load();
+    setLabel();
+    seek.value = 0;
+    timeEl.textContent = `0:00 / 0:00`;
+  }
+
+  audio.volume = parseFloat(vol.value || "0.9");
+  loadSelected();
+
+  select.addEventListener("change", () => {
+    const wasPlaying = !audio.paused;
+    loadSelected();
+    if(wasPlaying) audio.play().catch(() => {});
+  });
+
+  playBtn.addEventListener("click", () => {
+    if(audio.paused){
+      audio.play().catch(() => alert("Audio gagal diputar. Cek file/path audio."));
+    } else {
+      audio.pause();
+    }
+  });
+
+  stopBtn.addEventListener("click", () => {
+    audio.pause();
+    audio.currentTime = 0;
+  });
+
+  audio.addEventListener("loadedmetadata", () => {
+    timeEl.textContent = `0:00 / ${formatTime(audio.duration)}`;
+  });
+
+  audio.addEventListener("timeupdate", () => {
+    if(!isFinite(audio.duration) || audio.duration <= 0) return;
+    const percent = (audio.currentTime / audio.duration) * 100;
+    seek.value = String(Math.floor(percent));
+    timeEl.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+  });
+
+  seek.addEventListener("input", () => {
+    if(!isFinite(audio.duration) || audio.duration <= 0) return;
+    const percent = parseFloat(seek.value || "0") / 100;
+    audio.currentTime = audio.duration * percent;
+  });
+
+  vol.addEventListener("input", () => {
+    audio.volume = parseFloat(vol.value || "0.9");
+  });
+}
+
+/* INIT */
 document.addEventListener("DOMContentLoaded", () => {
   setActiveNav();
   initKelasPage();
   initInstrukturPage();
   initJadwalPage();
   initDaftarPage();
+  initAudioPlayer();
 });
