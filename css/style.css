@@ -29,9 +29,7 @@ main.container{
   padding-bottom: 1rem;
 }
 
-/* =========================
-   NAVBAR
-========================= */
+/* NAVBAR */
 .navbar{
   background: rgba(255,255,255,.10) !important;
   border-bottom: 1px solid rgba(255,255,255,.16) !important;
@@ -67,16 +65,12 @@ main.container{
   border: 1px solid rgba(255,255,255,.16);
 }
 
-/* =========================
-   TEXT helper
-========================= */
+/* TEXT helper */
 .small-muted{
   color: var(--muted);
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 .hero{
   border-radius: 1rem;
   padding: 1.25rem;
@@ -90,9 +84,7 @@ main.container{
   letter-spacing: .3px;
 }
 
-/* =========================
-   FILTER BAR
-========================= */
+/* FILTER BAR */
 .filter-bar{
   border-radius: 1rem;
   padding: 1rem;
@@ -101,9 +93,7 @@ main.container{
   backdrop-filter: blur(10px);
 }
 
-/* =========================
-   CARDS
-========================= */
+/* CARDS */
 .card{
   background: rgba(255,255,255,.10);
   border: 1px solid rgba(255,255,255,.16);
@@ -137,9 +127,7 @@ main.container{
   border: 1px solid rgba(13,110,253,.35);
 }
 
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTONS */
 .btn-primary{
   background: linear-gradient(135deg, #2f7bff, #0d6efd);
   border: 0;
@@ -170,7 +158,7 @@ main.container{
   border-color: rgba(255,255,255,.55);
 }
 
-/* box info cepat di hero (yang class: border rounded-3 p-3 bg-white) */
+
 .hero .border.rounded-3.bg-white{
   background: rgba(255,255,255,.10) !important;
   border: 1px solid rgba(255,255,255,.16) !important;
@@ -178,12 +166,12 @@ main.container{
   backdrop-filter: blur(10px);
 }
 
-/* biar teks di hero lebih kebaca */
+
 .hero .lead{
   color: rgba(255,255,255,.82);
 }
 
-/* table jadwal biar cocok di dark */
+
 .table{
   --bs-table-bg: transparent;
   --bs-table-color: var(--text);
@@ -226,12 +214,12 @@ main.container{
   box-shadow: 0 0 0 .2rem rgba(13,110,253,.25);
 }
 
-/* icon panah accordion biar keliatan di background gelap */
+
 .accordion-button::after{
   filter: invert(1);
 }
 
-/* card bootstrap yang kamu pakai border-0 shadow-sm tetap keliatan glass */
+
 .card.border-0.shadow-sm{
   background: rgba(255,255,255,.10);
   border: 1px solid rgba(255,255,255,.16);
@@ -239,7 +227,6 @@ main.container{
   backdrop-filter: blur(10px);
 }
 
-/* link btn outline di background gelap */
 .btn-outline-primary.btn-sm{
   border-color: rgba(230,240,255,.55);
   color: rgba(255,255,255,.90);
