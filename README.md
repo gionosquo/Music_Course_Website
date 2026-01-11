@@ -10,7 +10,7 @@ STIKOM Music Studio adalah website statis untuk informasi kursus musik **offline
 |---|------|-----|--------|------|
 | 1 | gionosquo narthzkiel | 240040112 | @gionosquo | Integrasi halaman + fitur (HTML/JS) |
 | 2 | Arnoldus Fernandito Borung | 240040073 | @ArnoldBorung 
-| 3 | I gede made ataya kumara | 340040128 | @Atayakumara477 
+| 3 | I Gede Made Ataya Kumara Dharma Putra | 240040128 | @Atayakumara477 
 
 ---
 
